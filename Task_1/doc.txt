@@ -1,0 +1,49 @@
+# Quantium Data Analytics Virtual Experience Program
+This repository contains my submissions for this program. This do not contains Quantium model answers.
+
+### This program consists of total three tasks
+- **Task 1:** Data Preparation and Customer Analytics
+- **Task 2:** Experimentation and Uplift Testing
+- **Task 3:** Analytics and Commercial Application
+
+Note: Only Task 1 files are uploaded till now, once other tasks are completed files will be uploaded
+
+----
+
+## Task 1: Data Preparation and Customer Analytics
+In this task, we have to conduct analysis on your client's transaction dataset and identify customer purchasing behaviours to generate insights and provide commercial recommendations.
+
+I have uploaded two Jupyter notebooks for this task
+### T 101: Data Cleaning and Merging
+The goal of this notebook is to clean the data, generate new variables and merge two dataframes into a single data frame. The whole process was performed in 2 phases
+We have two dataframes - transaction dataframe and customer segment dataframe.
+- **Phase 1:** In the first phase, we cleaned the transaction dataframe, corrected data types of features and generated new features from exisiting feature. From product name feature we derived
+    - Brand Name
+    - Flavour
+    - Packet Size   
+Customer segment dataframe was fine, no changes were required.
+
+- **Phase 2:** In this phase, we merged transaction and customer segment dataframe on loyality card number (unique identifier) into a single datafrmae. This dataframe was exported to a CSV file, which we used in the next notebook for futher analysis
+
+### T 102: Data Exploration, Analysis and Insights
+In this notebook, we will performed next step
+- **Exploring** features of the dataframe
+- **Analysing** customer segments with respect to number of customers, sales, quantity purchased, etc.
+- Finding **Insights** from the dataset to help the Category Manager with recommendations
+
+**The goal of this notebook is to find which customer segments to target and how to target them.** The whole process was performed in 3 phases:
+- **Phase 1:** In the first phase, we explored the various features of the dataframe and check if all features are assigned correct data types or not. Then we lookd for missing values and outliers
+    - We found two transactions with purchase quanitity of 200 units each. Both transactions was done by same customer and that customer made only two transactions in total. Other customers did max of purchase of 5 chips packets in a single transaction. It seems that either there was some data entry issue or that customer purchased huge quanityies of chips for resale. Therefore, we removed those two transactions from the dataframe
+    - We also found there was no transaction done on 25th December 2018, obious reason is its the Christmas Day and all stores were closed
+
+- **Phase 2:** In this phase, we will searched for top 3 customer segments which we should target in order to increase the sales and profit for us. Basically we will be targeting top 3 segments which contribute to the sales most and the reason behind that
+    - Top 3 customer segments we found to target are:
+        - (Budget) Old Families
+        - (Mainstream) Young Singles/Couples
+        - (Mainstream) Retirees
+    - We also found (Premium) Midage and Young Singles/Couples are willing to pay more price per packet of chips 
+
+- **Phase 3:** In this phase, we derived interesting insights for those three segments and find out how to target them. Basically, we searched for the most eligible product which could be used to target them in order to increase the sales. Below are few insights,
+    - **(Budget) Old Families** are 18% more likely to purchase **Woolworths** chips and 22% more likely to purchase **190 grams** packs than the rest of the population. Therefore, target product for this segment is Woolworths 190 grams chips
+    - **(Mainstream) Young Singles/Couples**  are 23% more likely to purchase **Twisties** chips and 28% more likely to purchase **270 grams** packs than the rest of the population. Therefore, target product for this segment is Twisties 270 grams chips
+    - **(Mainstream) Retirees** are 5% more likely to purchase **Twisties** chips and 14% more likely to purchase **250 grams** packs than the rest of the population. Therefore, target product for this segment is Twisties 250 grams chips
