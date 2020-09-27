@@ -7,7 +7,7 @@ The whole program was divided into three tasks:
 - **Task 2:** Experimentation and Uplift Testing
 - **Task 3:** Analytics and Commercial Application
 
-#### All the files are uploaded in form of PDF also/
+#### All the files are uploaded in form of PDF also.
 ----
 ## Task 1: Data Preparation and Customer Analytics
 In this task, we have to conduct analysis on your client's transaction dataset and identify customer purchasing behaviours to generate insights and provide commercial recommendations.
